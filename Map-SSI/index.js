@@ -1,5 +1,8 @@
+//creates the map using leaflet js
+    var map = L.map('map').setView([51.505, -0.09], 13);
 
 
+//iss api call
     const iss_api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
     async function getISS() {
