@@ -1,5 +1,6 @@
 //creates the map using leaflet js
-    const map = L.map('map').setView([51.505, -0.09], 13);
+    const map = L.map('map').setView([0, 0], 2);
+    const marker = L.marker([0, 0]).addTo(map);
 //use street map api for tiles
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contibutors'
     const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -13,6 +14,9 @@
             const data = await response.json();
             const { latitude, longitude } = data;
 
+            // L.marker([latitude, longitude]).addTo(map);
+            marker.setLatLng([latitude, longitude]);
+
             document.getElementById('lat').textContent = latitude;
             document.getElementById('lon').textContent = longitude;
 
@@ -21,4 +25,4 @@
             console.log(data.longitude);
             
         }
-        // getISS()
+         getISS()
