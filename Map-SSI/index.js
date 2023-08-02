@@ -1,7 +1,10 @@
 //creates the map using leaflet js
-    var map = L.map('map').setView([51.505, -0.09], 13);
-
-
+    const map = L.map('map').setView([51.505, -0.09], 13);
+//use street map api for tiles
+    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contibutors'
+    const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    const tiles = L.tileLayer(tileUrl, {attribution});
+    tiles.addTo(map);
 //iss api call
     const iss_api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
