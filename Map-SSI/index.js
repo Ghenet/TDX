@@ -26,13 +26,10 @@
             marker.setLatLng([latitude, longitude]);
             map.setView([latitude, longitude],7); //zooms the map to 4 where the ISS is in the specified LatLng
 
-            document.getElementById('lat').textContent = latitude;
-            document.getElementById('lon').textContent = longitude;
+            document.getElementById('lat').textContent = latitude.toFixed(2);
+            document.getElementById('lon').textContent = longitude.toFixed(2);
 
             console.log(data);
-            console.log(data.latitude);
-            console.log(data.longitude);
-            
         }
          getISS()
 
